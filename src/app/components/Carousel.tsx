@@ -26,7 +26,6 @@ export default function Carousel({
   const x = useRef(0);
   const startX = useRef(0);
   const dragging = useRef(false);
-  const maxScroll = useRef(0);
 
   const resume = useCallback(() => {
     progress.current = wrapper.current?.scrollLeft ?? 0;
@@ -34,14 +33,14 @@ export default function Carousel({
   }, []);
 
   const setProgress = useCallback((newProgress: number) => {
-    progress.current = clamp(newProgress, 0, maxScroll.current);
+    progress.current = clamp(
+      newProgress,
+      0,
+      (wrapper.current?.scrollWidth ?? 0) - (wrapper.current?.clientWidth ?? 0),
+    );
   }, []);
 
   const resize = useCallback(() => {
-    if (wrapper.current) {
-      maxScroll.current =
-        wrapper.current?.scrollWidth - wrapper.current?.clientWidth;
-    }
     setProgress(progress.current);
   }, [setProgress]);
   const wheel: WheelEventHandler = useCallback(
