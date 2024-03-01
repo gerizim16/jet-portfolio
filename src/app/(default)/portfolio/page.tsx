@@ -3,6 +3,7 @@ import { SanityDocument, groq } from "next-sanity";
 import { loadQuery } from "@root/sanity/lib/store";
 import Carousel from "../../components/Carousel";
 import SanityImage from "@/common/components/SanityImage";
+import Entrance from "./Entrance";
 
 export default async function Page() {
   const initial = await loadQuery<SanityDocument[]>(
@@ -14,13 +15,14 @@ export default async function Page() {
   return (
     <Carousel className="h-screen bg-black">
       {images.map((image, idx) => (
-        <SanityImage
-          className="h-auto max-h-full w-auto max-w-fit"
-          key={image._id}
-          image={image}
-          draggable={false}
-          priority={idx <= 1}
-        />
+        <Entrance key={image._id}>
+          <SanityImage
+            className="h-auto max-h-full w-auto max-w-fit"
+            image={image}
+            draggable={false}
+            priority={idx <= 1}
+          />
+        </Entrance>
       ))}
     </Carousel>
   );

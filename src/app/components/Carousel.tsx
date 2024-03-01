@@ -11,6 +11,7 @@ import {
   useLayoutEffect,
   ReactNode,
 } from "react";
+import { m } from "framer-motion";
 
 export default function Carousel({
   className,
@@ -99,8 +100,17 @@ export default function Carousel({
   }, [mouseUp, resize]);
 
   return (
-    <div
+    <m.div
       ref={wrapper}
+      initial="hidden"
+      animate="visible"
+      variants={{
+        visible: {
+          transition: {
+            staggerChildren: 0.3,
+          },
+        },
+      }}
       className={
         "flex overflow-x-auto scroll-smooth whitespace-nowrap " + className
       }
@@ -111,6 +121,6 @@ export default function Carousel({
       onMouseUp={mouseUp}
     >
       {children}
-    </div>
+    </m.div>
   );
 }
