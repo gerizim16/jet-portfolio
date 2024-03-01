@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`relative ${inter.variable} ${windsong.variable} font-sans`}
+        className={`relative ${inter.variable} ${windsong.variable} bg-black font-sans`}
       >
         {children}
       </body>

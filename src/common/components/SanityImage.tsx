@@ -10,11 +10,13 @@ export default function SanityImage({
   className,
   quality,
   draggable,
+  priority,
 }: {
   image: SanityAsset;
   className?: string;
   quality?: number | `${number}`;
   draggable?: boolean;
+  priority?: boolean;
 }) {
   const imageProps = useNextSanityImage(client, image);
 
@@ -27,6 +29,7 @@ export default function SanityImage({
       placeholder="blur"
       blurDataURL={image.metadata.lqip}
       draggable={draggable}
+      priority={priority}
     />
   );
 }

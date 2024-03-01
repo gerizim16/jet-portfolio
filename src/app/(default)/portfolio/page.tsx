@@ -13,12 +13,13 @@ export default async function Page() {
 
   return (
     <Carousel className="h-screen bg-black">
-      {images.map((image) => (
+      {images.map((image, idx) => (
         <SanityImage
           className="h-auto max-h-full w-auto max-w-fit"
           key={image._id}
           image={image}
           draggable={false}
+          priority={idx <= 1}
         />
       ))}
     </Carousel>
