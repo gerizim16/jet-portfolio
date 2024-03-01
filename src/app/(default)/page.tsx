@@ -1,12 +1,16 @@
 import { SanityDocument, groq } from "next-sanity";
 
 import { loadQuery } from "@root/sanity/lib/store";
-import Carousel from "../components/Carousel";
+import SanityImage from "@/common/components/SanityImage";
 
 export default async function Page() {
-  const initial = await loadQuery<SanityDocument[]>(
-    groq`*[_type == "portfolio"].images[].asset->{...}`,
-  );
+  const initial = await loadQuery<SanityDocument[]>(groq`*[_type == "home"][0].image.asset->{...}`);
 
-  return <Carousel className="h-screen bg-black" images={initial.data} />;
+  return (
+    <SanityImage
+      className="h-screen w-screen object-cover"
+      image={initial.data}
+      draggable={false}
+    />
+  );
 }

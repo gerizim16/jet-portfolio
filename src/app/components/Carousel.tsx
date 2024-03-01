@@ -1,26 +1,23 @@
 "use client";
 
-import SanityImage from "@/common/components/SanityImage";
 import useAnimationFrame from "@/common/hooks/useAnimationFrame";
 import clamp from "@/common/utils/clamp";
 import lerp from "@/common/utils/lerp";
-import { SanityAsset } from "@sanity/image-url/lib/types/types";
 import {
-  TouchEvent,
   MouseEvent,
   WheelEventHandler,
   useCallback,
   useRef,
-  useEffect,
   useLayoutEffect,
+  ReactNode,
 } from "react";
 
 export default function Carousel({
   className,
-  images,
+  children,
 }: {
   className?: string;
-  images: Array<SanityAsset>;
+  children: ReactNode;
 }) {
   const wrapper = useRef<HTMLDivElement>(null);
 
@@ -113,14 +110,7 @@ export default function Carousel({
       onMouseMove={mouseMove}
       onMouseUp={mouseUp}
     >
-      {images.map((image) => (
-        <SanityImage
-          className="h-auto max-h-full w-auto max-w-fit"
-          key={image._id}
-          image={image}
-          draggable={false}
-        />
-      ))}
+      {children}
     </div>
   );
 }
