@@ -1,17 +1,17 @@
 "use client";
 
+import {
+  MouseEvent,
+  ReactNode,
+  useCallback,
+  useLayoutEffect,
+  useRef,
+  WheelEventHandler,
+} from "react";
+
 import useAnimationFrame from "@/common/hooks/useAnimationFrame";
 import clamp from "@/common/utils/clamp";
 import lerp from "@/common/utils/lerp";
-import {
-  MouseEvent,
-  WheelEventHandler,
-  useCallback,
-  useRef,
-  useLayoutEffect,
-  ReactNode,
-} from "react";
-import { m } from "framer-motion";
 
 export default function Carousel({
   className,
@@ -99,17 +99,8 @@ export default function Carousel({
   }, [mouseUp, resize]);
 
   return (
-    <m.div
+    <div
       ref={wrapper}
-      initial="hidden"
-      animate="visible"
-      variants={{
-        visible: {
-          transition: {
-            staggerChildren: 0.3,
-          },
-        },
-      }}
       className={
         "flex overflow-x-auto scroll-smooth whitespace-nowrap " + className
       }
@@ -120,6 +111,6 @@ export default function Carousel({
       onMouseUp={mouseUp}
     >
       {children}
-    </m.div>
+    </div>
   );
 }

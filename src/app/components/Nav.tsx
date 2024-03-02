@@ -1,9 +1,9 @@
 "use client"
 
-import Link from "next/link";
-import { ReactNode } from "react";
 import { m } from "framer-motion";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ReactNode } from "react";
 
 function MotionLink({ href, children }: { href: string; children: ReactNode }) {
   const active = usePathname() === href;

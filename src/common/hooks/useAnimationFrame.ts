@@ -4,8 +4,8 @@ const useAnimationFrame = (callback: (deltaTime: number) => void) => {
   const requestRef = useRef(-1);
   const previousTimeRef = useRef(0);
 
-  const animate: FrameRequestCallback = useCallback(
-    (time) => {
+  const animate = useCallback(
+    (time: number) => {
       if (previousTimeRef.current != undefined) {
         const deltaTime = time - previousTimeRef.current;
         callback(deltaTime);

@@ -1,11 +1,12 @@
 "use client";
 
 import { m } from "framer-motion";
+import { ReactNode } from "react";
 
 export default function Entrance({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <m.div
