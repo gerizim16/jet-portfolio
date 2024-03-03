@@ -101,16 +101,14 @@ export default function Carousel({
   return (
     <div
       ref={wrapper}
-      className={
-        "flex overflow-x-auto scroll-smooth whitespace-nowrap " + className
-      }
+      className={"overflow-x-auto overflow-y-clip scroll-smooth " + className}
       onResize={resize}
       onWheel={wheel}
       onMouseDown={mouseDown}
       onMouseMove={mouseMove}
       onMouseUp={mouseUp}
     >
-      {children}
+      <div className="flex items-center h-full w-max">{children}</div>
     </div>
   );
 }

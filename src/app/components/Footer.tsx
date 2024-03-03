@@ -9,7 +9,7 @@ function MotionLink({ href, children }: { href: string; children: ReactNode }) {
   const active = usePathname() === href;
 
   return (
-    <Link className="relative mb-1" href={href}>
+    <Link className="relative" href={href}>
       {children}
       {active && (
         <m.div
@@ -27,15 +27,21 @@ export default function Nav() {
       <div className="mx-auto flex h-full max-w-screen-2xl items-center gap-4">
         <Link
           href="/"
-          className="whitespace-nowrap font-handwriting text-2xl sm:text-4xl md:text-6xl"
+          className="whitespace-nowrap font-handwriting text-2xl sm:text-6xl"
         >
           Jet morano
         </Link>
         <div className="grow" />
-        <div className="relative flex gap-4 overflow-x-auto text-sm sm:gap-10 sm:text-base sm:font-medium md:gap-14">
+        <div className="relative flex gap-4 font-medium sm:gap-10 md:gap-14">
           <MotionLink href="/">Home</MotionLink>
           <MotionLink href="/portfolio">Portfolio</MotionLink>
           <MotionLink href="/about">About</MotionLink>
+          <a
+            href="https://www.instagram.com/jet_morano_photography/"
+            target="_blank"
+          >
+            Instagram
+          </a>
         </div>
       </div>
     </nav>

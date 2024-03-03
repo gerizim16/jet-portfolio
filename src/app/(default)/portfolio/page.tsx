@@ -18,7 +18,7 @@ export default async function Page() {
       {images.map((image, idx) => (
         <Entrance key={image._id}>
           <SanityImage
-            className="h-full max-h-full w-auto max-w-fit"
+            className="max-w-[100vw] max-h-[100vh] h-auto w-auto"
             image={image}
             draggable={false}
             priority={idx <= 1}
