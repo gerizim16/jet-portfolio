@@ -1,5 +1,5 @@
 import { loadQuery } from "@root/sanity/lib/store";
-import { groq,SanityDocument } from "next-sanity";
+import { groq, SanityDocument } from "next-sanity";
 
 import SanityImage from "@/common/components/SanityImage";
 
@@ -16,12 +16,13 @@ export default async function Page() {
   return (
     <Carousel className="h-screen bg-black">
       {images.map((image, idx) => (
-        <Entrance key={image._id}>
+        <Entrance className="h-full" key={image._id}>
           <SanityImage
-            className="max-w-[100vw] max-h-[100vh] h-auto w-auto"
+            key={image._id}
+            className="h-full select-none w-auto max-w-[100vw] object-contain"
             image={image}
             draggable={false}
-            priority={idx <= 1}
+            priority={idx <= 2}
             fit
           />
         </Entrance>

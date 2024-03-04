@@ -5,11 +5,14 @@ import { ReactNode } from "react";
 
 export default function Entrance({
   children,
-}: Readonly<{
+  className,
+}: {
   children: ReactNode;
-}>) {
+  className?: string;
+}) {
   return (
     <m.div
+      className={className}
       initial={{ opacity: 0, scale: 0.7 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{

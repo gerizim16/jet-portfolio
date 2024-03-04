@@ -108,7 +108,7 @@ export default function Carousel({
       onMouseMove={mouseMove}
       onMouseUp={mouseUp}
     >
-      <div className="flex items-center h-full w-max">{children}</div>
+      <div className="flex h-full min-w-max">{children}</div>
     </div>
   );
 }

@@ -4,11 +4,13 @@ import { client } from "@root/sanity/lib/client";
 import { SanityAsset } from "@sanity/image-url/lib/types/types";
 import Image from "next/image";
 import { useNextSanityImage } from "next-sanity-image";
+import { CSSProperties } from "react";
 
 export default function SanityImage({
   image,
   width,
   className,
+  style,
   quality,
   draggable,
   priority,
@@ -18,6 +20,7 @@ export default function SanityImage({
   image: SanityAsset;
   width?: number | `${number}`;
   className?: string;
+  style?: CSSProperties;
   quality?: number | `${number}`;
   draggable?: boolean;
   priority?: boolean;
@@ -29,12 +32,14 @@ export default function SanityImage({
       return imageUrlBuilder
         .width(
           fit
-            ? Math.round(Math.min(
-                options.originalImageDimensions.width,
-                1440 *
-                  (options.originalImageDimensions.width /
-                    options.originalImageDimensions.height),
-              ))
+            ? Math.round(
+                Math.min(
+                  options.originalImageDimensions.width,
+                  1440 *
+                    (options.originalImageDimensions.width /
+                      options.originalImageDimensions.height),
+                ),
+              )
             : options.width ||
                 Math.min(options.originalImageDimensions.width, 2560),
         )
@@ -51,6 +56,7 @@ export default function SanityImage({
       blurDataURL={image.metadata.lqip}
       {...(width ? { width } : {})}
       className={className}
+      style={style}
       quality={quality}
       draggable={draggable}
       priority={priority}
