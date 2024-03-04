@@ -14,7 +14,7 @@ export default async function Page() {
   const images = initial.data;
 
   return (
-    <Carousel className="h-screen bg-black select-none">
+    <Carousel className="h-svh bg-black select-none">
       {images.map((image, idx) => (
         <Entrance className="h-full" key={image._id}>
           <SanityImage

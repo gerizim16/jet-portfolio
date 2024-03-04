@@ -23,16 +23,16 @@ function MotionLink({ href, children }: { href: string; children: ReactNode }) {
 
 export default function Nav() {
   return (
-    <nav className="fixed left-0 right-0 top-0 z-20 h-16 bg-opacity-30 bg-gradient-to-b from-black/40 to-transparent px-3 sm:h-32 sm:px-8">
+    <nav className="pointer-events-none fixed left-0 right-0 top-0 z-20 h-16 bg-opacity-30 bg-gradient-to-b from-black/40 to-transparent px-3 sm:h-32 sm:px-8">
       <div className="mx-auto flex h-full max-w-screen-2xl items-center gap-4">
         <Link
           href="/"
-          className="whitespace-nowrap font-handwriting text-2xl sm:text-4xl md:text-6xl"
+          className="pointer-events-auto whitespace-nowrap font-handwriting text-2xl sm:text-4xl md:text-6xl"
         >
           Jet morano
         </Link>
         <div className="grow" />
-        <div className="relative flex gap-4 overflow-x-auto text-sm sm:gap-10 sm:text-base sm:font-medium md:gap-14">
+        <div className="relative flex gap-4 overflow-x-auto text-sm *:pointer-events-auto sm:gap-10 sm:text-base sm:font-medium md:gap-14">
           <MotionLink href="/">Home</MotionLink>
           <MotionLink href="/portfolio">Portfolio</MotionLink>
           <MotionLink href="/about">About</MotionLink>
