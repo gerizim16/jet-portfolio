@@ -32,7 +32,7 @@ export default function Nav() {
           Jet morano
         </Link>
         <div className="grow" />
-        <div className="relative flex gap-4 overflow-x-auto text-sm *:pointer-events-auto sm:gap-10 sm:text-base sm:font-medium md:gap-14">
+        <div className="relative flex gap-4 overflow-x-auto text-base *:pointer-events-auto sm:gap-10 sm:text-lg sm:font-medium md:gap-14">
           <MotionLink href="/">Home</MotionLink>
           <MotionLink href="/portfolio">Portfolio</MotionLink>
           <MotionLink href="/about">About</MotionLink>

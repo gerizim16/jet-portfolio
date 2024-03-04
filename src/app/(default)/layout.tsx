@@ -14,12 +14,10 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <div>
-      <LazyMotion features={loadFeatures} strict>
-        <Nav />
-        {children}
-        <Footer />
-      </LazyMotion>
-    </div>
+    <LazyMotion features={loadFeatures} strict>
+      <Nav />
+      {children}
+      <Footer />
+    </LazyMotion>
   );
 }

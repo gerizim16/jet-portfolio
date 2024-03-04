@@ -1,13 +1,14 @@
+import { loadQuery } from "@root/sanity/lib/store";
+import { groq, SanityDocument } from "next-sanity";
+
+import About from "./About";
+
 export default async function Page() {
-  return (
-    <div>
-      {/* A nurse by profession, Jet has found his passion in telling stories
-      through. When he's not busy saving lives, he seeks to capture the moments
-      that give life meaning. He hopes to explore the magnificence the world has
-      to offer and share them with an audience as passionate as him - embarking
-      on an adventure together. Join Jet in his journey to telling more stories.
-      For collaborations and inquiries, you may contact him through the
-      following: */}
-    </div>
+  const initial = await loadQuery<SanityDocument>(
+    groq`*[_type == "about"][0]{content, 'image': image.asset->{...}}`,
   );
+
+  const { data } = initial;
+
+  return <About data={data} />;
 }

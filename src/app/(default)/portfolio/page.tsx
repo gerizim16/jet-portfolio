@@ -14,19 +14,21 @@ export default async function Page() {
   const images = initial.data;
 
   return (
-    <Carousel className="h-svh bg-black select-none">
-      {images.map((image, idx) => (
-        <Entrance className="h-full" key={image._id}>
-          <SanityImage
-            key={image._id}
-            className="h-full select-none w-auto max-w-[100vw] object-contain"
-            image={image}
-            draggable={false}
-            priority={idx <= 2}
-            fit
-          />
-        </Entrance>
-      ))}
+    <Carousel className="h-svh select-none bg-black">
+      {images.map((image, idx) => {
+        if (image == null) return null;
+        return (
+          <Entrance className="h-full" key={image._key}>
+            <SanityImage
+              className="h-full w-auto max-w-[100vw] select-none object-contain"
+              image={image}
+              draggable={false}
+              priority={idx <= 2}
+              fit
+            />
+          </Entrance>
+        );
+      })}
     </Carousel>
   );
 }
