@@ -28,5 +28,21 @@ export const schema: { types: SchemaTypeDefinition[] } = {
         },
       ],
     },
+    {
+      name: "about",
+      type: "document",
+      fields: [
+        {
+          title: "content",
+          name: "content",
+          type: "array",
+          of: [{ type: "block" }],
+        },
+        {
+          name: "image",
+          type: "image",
+        },
+      ],
+    },
   ],
 };

@@ -9,8 +9,9 @@ export default function Footer() {
           <a
             href="https://www.instagram.com/jet_morano_photography/"
             target="_blank"
+            className="text-xs sm:text-sm"
           >
-            <AiOutlineInstagram className="inline-block size-5 text-sm" />{" "}
+            <AiOutlineInstagram className="inline-block size-5" />{" "}
             @jet_morano_photography
           </a>
         </div>

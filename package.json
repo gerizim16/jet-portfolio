@@ -10,6 +10,7 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
+    "@portabletext/react": "^3.0.11",
     "@sanity/client": "^6.15.1",
     "@sanity/image-url": "1",
     "@sanity/overlays": "^2.3.21",
