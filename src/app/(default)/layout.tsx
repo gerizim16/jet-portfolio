@@ -1,6 +1,6 @@
 "use client";
 
-import { LazyMotion } from "framer-motion";
+import { LazyMotion, MotionConfig } from "framer-motion";
 import { ReactNode } from "react";
 
 import Footer from "../components/Footer";
@@ -15,9 +15,16 @@ export default function RootLayout({
 }>) {
   return (
     <LazyMotion features={loadFeatures} strict>
-      <Nav />
-      {children}
-      <Footer />
+      <MotionConfig
+        transition={{
+          duration: 0.8,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+      >
+        <Nav />
+        {children}
+        <Footer />
+      </MotionConfig>
     </LazyMotion>
   );
 }

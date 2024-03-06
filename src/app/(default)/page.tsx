@@ -18,7 +18,10 @@ export default async function Page() {
       id="myVideo"
       className="h-svh w-svw object-cover"
     >
-      <source src="/pexels_videos_1918465 (2160p).mp4" type="video/mp4" />
+      <source
+        src="/pexels_videos_1918465 (2160p) (compressed).mp4"
+        type="video/mp4"
+      />
     </video>
   );
 
