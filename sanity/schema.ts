@@ -25,6 +25,9 @@ export const schema: { types: SchemaTypeDefinition[] } = {
               type: "image",
             },
           ],
+          options: {
+            layout: "grid",
+          },
         },
       ],
     },
