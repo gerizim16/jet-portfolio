@@ -11,13 +11,7 @@ export default async function Page() {
   );
 
   return (
-    <video
-      autoPlay
-      muted
-      loop
-      id="myVideo"
-      className="h-svh w-svw object-cover"
-    >
+    <video autoPlay muted loop id="myVideo" className="h-screen w-svw object-cover">
       <source
         src="/pexels_videos_1918465 (2160p) (compressed).mp4"
         type="video/mp4"
@@ -28,7 +22,7 @@ export default async function Page() {
   return (
     <Entrance>
       <SanityImage
-        className="h-svh w-svw object-cover"
+        className="h-screen w-svw object-cover"
         image={initial.data}
         draggable={false}
         sizes="100vw"

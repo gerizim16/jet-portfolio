@@ -10,7 +10,7 @@ import SanityImage from "@/common/components/SanityImage";
 
 export default function About({ data }: { data: SanityDocument }) {
   return (
-    <div className="grid min-h-svh items-center lg:grid-cols-2">
+    <div className="grid min-h-screen items-center lg:grid-cols-2">
       <div className=" px-10 pb-6 pt-16 text-sm sm:mr-4 sm:pt-28 md:pt-32 lg:max-w-2xl lg:justify-self-end lg:text-xl">
         <m.p
           initial={{ opacity: 0, y: "100%" }}
@@ -59,7 +59,7 @@ export default function About({ data }: { data: SanityDocument }) {
           <SanityImage
             image={data["image"]}
             priority
-            className="h-full max-h-svh object-cover object-right-bottom"
+            className="h-full max-h-screen object-cover object-right-bottom"
             fit
           />
         </m.div>

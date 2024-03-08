@@ -14,7 +14,7 @@ export default async function Page() {
   const images = initial.data;
 
   return (
-    <Carousel className="h-svh select-none bg-black">
+    <Carousel className="h-screen select-none bg-black">
       {images.map((image, idx) => {
         if (image == null) return null;
         return (
