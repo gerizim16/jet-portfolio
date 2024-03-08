@@ -9,11 +9,9 @@ import Entrance from "./Entrance";
 export const revalidate = 60;
 
 export default async function Page() {
-  const initial = await loadQuery<SanityDocument[]>(
+  const { data: images } = await loadQuery<SanityDocument[]>(
     groq`*[_type == "portfolio"].images[].asset->{...}`,
   );
-
-  const images = initial.data;
 
   return (
     <Carousel className="h-screen select-none bg-black">

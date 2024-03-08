@@ -8,7 +8,7 @@ import Entrance from "./Entrance";
 export const revalidate = 60;
 
 export default async function Page() {
-  const initial = await loadQuery<SanityDocument>(
+  const { data: image } = await loadQuery<SanityDocument>(
     groq`*[_type == "home"][0].image.asset->{...}`,
   );
 
@@ -31,7 +31,7 @@ export default async function Page() {
     <Entrance>
       <SanityImage
         className="h-screen w-screen object-cover object-[center_60%]"
-        image={initial.data}
+        image={image}
         draggable={false}
         sizes="100vw"
         quality={100}
