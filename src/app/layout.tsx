@@ -18,7 +18,7 @@ const windsong = WindSong({
 
 export const metadata: Metadata = {
   title: "Jet Morano",
-  openGraph: { images: ["/api/og"] },
+  metadataBase: new URL(process.env.NEXT_PUBLIC_METADATA_BASE as string),
 };
 
 export default function RootLayout({
