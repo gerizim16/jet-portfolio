@@ -20,7 +20,7 @@ export default async function Page() {
         return (
           <Entrance className="h-full" key={image._key}>
             <SanityImage
-              className="h-full w-auto max-w-[100vw] select-none object-contain sm:max-w-max"
+              className="h-full w-auto max-w-[100vw] select-none object-contain sm:max-w-none"
               image={image}
               draggable={false}
               priority={idx <= 2}

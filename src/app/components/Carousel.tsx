@@ -6,7 +6,7 @@ import {
   useCallback,
   useLayoutEffect,
   useRef,
-  WheelEventHandler,
+  // WheelEventHandler,
 } from "react";
 
 import useAnimationFrame from "@/common/hooks/useAnimationFrame";
@@ -43,13 +43,14 @@ export default function Carousel({
   const resize = useCallback(() => {
     setProgress(progress.current);
   }, [setProgress]);
-  const wheel: WheelEventHandler = useCallback(
+
+  /* const wheel: WheelEventHandler = useCallback(
     (e) => {
       resume();
       setProgress(progress.current + e.deltaY * 5);
     },
     [resume, setProgress],
-  );
+  ); */
 
   const mouseDown = useCallback(
     (e: MouseEvent) => {
@@ -103,7 +104,7 @@ export default function Carousel({
       ref={wrapper}
       className={"overflow-x-auto overflow-y-clip scroll-smooth " + className}
       onResize={resize}
-      onWheel={wheel}
+      // onWheel={wheel}
       onMouseDown={mouseDown}
       onMouseMove={mouseMove}
       onMouseUp={mouseUp}
