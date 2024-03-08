@@ -40,7 +40,7 @@ export default function About({ data }: { data: SanityDocument }) {
               @jet_morano_photography
             </a>
             <a
-              href="mailto:josepablomorano28@gmail.com?subject=Collaboration"
+              href="mailto:info@jetmorano.com?subject=Collaboration"
               target="_top"
               className="mt-2 block text-base"
             >
