@@ -45,7 +45,7 @@ export default function About({ data }: { data: SanityDocument }) {
               className="mt-2 block text-base"
             >
               <AiOutlineMail className="inline-block size-5" />{" "}
-              josepablomorano28@gmail.com
+              info@jetmorano.com
             </a>
           </div>
         </m.div>
