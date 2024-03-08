@@ -47,6 +47,6 @@
   },
   "browserslist": [
     "defaults",
-    "safari > 14"
+    "safari >= 14"
   ]
 }
