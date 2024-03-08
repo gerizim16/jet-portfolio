@@ -3,8 +3,6 @@
 
 // import SanityImage from "@/common/components/SanityImage";
 
-import Entrance from "./Entrance";
-
 // export const revalidate = 60;
 
 export default async function Page() {
@@ -13,20 +11,18 @@ export default async function Page() {
   // );
 
   return (
-    <Entrance>
-      <video
-        autoPlay
-        muted
-        loop
-        id="myVideo"
-        className="h-screen w-screen object-cover"
-      >
-        <source
-          src="/pexels_videos_1918465 (2160p) (compressed).mp4"
-          type="video/mp4"
-        />
-      </video>
-    </Entrance>
+    <video
+      autoPlay
+      muted
+      loop
+      id="myVideo"
+      className="h-screen w-screen object-cover"
+    >
+      <source
+        src="/pexels_videos_1918465 (2160p) (compressed).mp4"
+        type="video/mp4"
+      />
+    </video>
   );
 
   // return (
