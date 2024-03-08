@@ -3,6 +3,8 @@ import { groq, SanityDocument } from "next-sanity";
 
 import About from "./About";
 
+export const revalidate = 60;
+
 export default async function Page() {
   const initial = await loadQuery<SanityDocument>(
     groq`*[_type == "about"][0]{content, 'image': image.asset->{...}}`,

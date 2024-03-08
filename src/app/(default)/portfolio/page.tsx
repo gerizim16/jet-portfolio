@@ -6,6 +6,8 @@ import SanityImage from "@/common/components/SanityImage";
 import Carousel from "../../components/Carousel";
 import Entrance from "./Entrance";
 
+export const revalidate = 60;
+
 export default async function Page() {
   const initial = await loadQuery<SanityDocument[]>(
     groq`*[_type == "portfolio"].images[].asset->{...}`,
