@@ -34,6 +34,7 @@ export default async function Page() {
         image={initial.data}
         draggable={false}
         sizes="100vw"
+        quality={100}
         priority
         fit
       />
