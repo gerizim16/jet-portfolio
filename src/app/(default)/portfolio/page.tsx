@@ -18,7 +18,7 @@ export default async function Page() {
       {images.map((image, idx) => {
         if (image == null) return null;
         return (
-          <Entrance className="h-full" key={image._key}>
+          <Entrance className="h-full" key={image._id}>
             <SanityImage
               className="h-full w-auto max-w-[100vw] select-none object-contain sm:max-w-none"
               image={image}
